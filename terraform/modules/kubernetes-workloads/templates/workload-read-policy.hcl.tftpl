@@ -1,0 +1,18 @@
+%{ for secret_path in read_secret_paths ~}
+path "${secret_path.mount_path}/data/${secret_path.path}" {
+  capabilities = ["read"]
+}
+
+path "${secret_path.mount_path}/data/${secret_path.path}/*" {
+  capabilities = ["read"]
+}
+
+path "${secret_path.mount_path}/metadata/${secret_path.path}" {
+  capabilities = ["read", "list"]
+}
+
+path "${secret_path.mount_path}/metadata/${secret_path.path}/*" {
+  capabilities = ["read", "list"]
+}
+
+%{ endfor ~}

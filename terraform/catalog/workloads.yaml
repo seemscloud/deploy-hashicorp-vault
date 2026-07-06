@@ -1,0 +1,25 @@
+kubernetes_auth:
+  karakoram:
+    mount: k8s/gke/prod-common-apps/europe-west1/karakoram
+    display_name: GKE / prod-common-apps / europe-west1 / karakoram
+    description: Kubernetes auth for GKE karakoram.
+    kubernetes_host: https://kubernetes.default.svc
+    disable_local_ca_jwt: false
+    disable_iss_validation: true
+
+workloads:
+  prod-service-aaa:
+    display_name: Prod / Service AAA
+    auth: karakoram
+    namespace: service-aaa-prod
+    service_account: service-aaa
+    grants:
+      kv/lpp/gcp/services/service-aaa/prod: read
+
+  prod-service-bbb:
+    display_name: Prod / Service BBB
+    auth: karakoram
+    namespace: service-bbb-prod
+    service_account: service-bbb
+    grants:
+      kv/lpp/gcp/services/service-bbb/prod: read

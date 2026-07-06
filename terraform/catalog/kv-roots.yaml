@@ -1,0 +1,16 @@
+mounts:
+  kv:
+    path: kv
+    description: Shared KV v2 mount for application secrets.
+    listing_visibility: hidden
+
+roots:
+  kv:
+    paths:
+      lpp:
+        gcp:
+          services: {}
+        onprem:
+          services: {}
+        azure:
+          services: {}

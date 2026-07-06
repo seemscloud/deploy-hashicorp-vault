@@ -1,0 +1,36 @@
+roles:
+  alpha:
+    display_name: Team Alpha
+    auth_groups:
+      auth0:
+        name: Auth0 / Vault - Team Alpha
+        aliases:
+          - Alpha
+    grants:
+      kv/lpp/gcp/services/service-aaa: write
+      kv/lpp/azure/services/service-alpha-worker: write
+      kv/lpp/onprem/services/service-shared-api: read
+
+  beta:
+    display_name: Team Beta
+    auth_groups:
+      auth0:
+        name: Auth0 / Vault - Team Beta
+        aliases:
+          - Beta
+    grants:
+      kv/lpp/gcp/services/service-bbb: write
+      kv/lpp/onprem/services/service-beta-api: write
+      kv/lpp/onprem/services/service-shared-api: write
+
+  gamma:
+    display_name: Team Gamma
+    auth_groups:
+      auth0:
+        name: Auth0 / Vault - Team Gamma
+        aliases:
+          - Gamma
+    grants:
+      kv/lpp/gcp/services/service-gamma-api: write
+      kv/lpp/azure/services/service-gamma-worker: write
+      kv/lpp/gcp/services/service-aaa: read
