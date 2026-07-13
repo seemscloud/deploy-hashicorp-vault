@@ -1,3 +1,4 @@
 .env.vault-*
 auth0.creds
 creds.txt
+crds.json

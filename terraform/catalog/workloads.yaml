@@ -8,6 +8,62 @@ kubernetes_auth:
     disable_iss_validation: true
 
 workloads:
+  injector-sidecar-file:
+    display_name: Injector / Sidecar File
+    auth: karakoram
+    namespace: vault
+    service_account: injector-sidecar-file
+    grants:
+      kv/lpp/gcp/services/service-aaa/prod/app-config: read
+
+  agent-sidecar-file:
+    display_name: Agent / Sidecar File
+    auth: karakoram
+    namespace: vault
+    service_account: agent-sidecar-file
+    grants:
+      kv/lpp/gcp/services/service-aaa/prod/app-config: read
+
+  client-cli:
+    display_name: Client / CLI
+    auth: karakoram
+    namespace: vault
+    service_account: client-cli
+    grants:
+      kv/lpp/gcp/services/service-aaa/prod/app-config: read
+
+  secrets-operator:
+    display_name: Secrets Operator
+    auth: karakoram
+    namespace: vault
+    service_account: secrets-operator
+    grants:
+      kv/lpp/gcp/services/service-aaa/prod/app-config: read
+
+  injector-init-file:
+    display_name: Injector / Init File
+    auth: karakoram
+    namespace: vault
+    service_account: injector-init-file
+    grants:
+      kv/lpp/gcp/services/service-aaa/prod/app-config: read
+
+  injector-init-env:
+    display_name: Injector / Init Env
+    auth: karakoram
+    namespace: vault
+    service_account: injector-init-env
+    grants:
+      kv/lpp/gcp/services/service-aaa/prod/app-env: read
+
+  client-python-sdk:
+    display_name: Client / Python SDK
+    auth: karakoram
+    namespace: vault
+    service_account: client-python-sdk
+    grants:
+      kv/lpp/gcp/services/service-aaa/prod/app-config: read
+
   prod-service-aaa:
     display_name: Prod / Service AAA
     auth: karakoram

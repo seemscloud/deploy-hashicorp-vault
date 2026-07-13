@@ -100,6 +100,10 @@ server:
 
         storage "raft" {
           path = "/vault/data"
+
+          retry_join {
+            leader_api_addr = "http://vault-0.vault-internal:8200"
+          }
         }
 
         service_registration "kubernetes" {}
